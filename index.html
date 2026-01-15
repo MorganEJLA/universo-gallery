@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Universo da Doçura — Gallery</title>
+    <meta
+      name="description"
+      content="A static gallery preview of Universo da Doçura — a custom WordPress dessert atlas."
+    />
+
+    <!-- Fonts (close to your WP vibe: elegant serif + clean sans) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300..800&family=Inter:wght@300..800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+
+  <body>
+    <header class="topbar">
+      <div class="wrap topbar__inner">
+        <a class="brand" href="#">
+          <span class="brand__title">Universo da Doçura</span>
+          <span class="brand__tag">Gallery Preview</span>
+        </a>
+
+        <nav class="topnav" aria-label="Primary">
+          <a class="topnav__link" href="#gallery">Screens</a>
+          <a class="topnav__link" href="#about">About</a>
+          <a
+            class="btn btn--orange"
+            href="https://github.com/"
+            target="_blank"
+            rel="noreferrer"
+            >View Repo</a
+          >
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="wrap hero__inner">
+          <div class="hero__copy">
+            <h1>Where desserts become stories.</h1>
+            <p class="lede">
+              A static screenshot gallery of my in-progress WordPress build.
+              This lets me show layout, styling, and UX while the full site
+              stays local (for now).
+            </p>
+
+            <div class="hero__actions">
+              <a class="btn btn--pistachio" href="#gallery">Start Exploring</a>
+              <a class="btn btn--ghost" href="#about">What you’re seeing</a>
+            </div>
+
+            <div class="controls" role="search">
+              <label class="sr-only" for="search">Search screens</label>
+              <input
+                id="search"
+                type="search"
+                placeholder="Search: home, dessert library, artisans, locais, açores…"
+                autocomplete="off"
+              />
+            </div>
+          </div>
+
+          <div class="hero__card">
+            <p class="hero__cardTitle">Gallery Notes</p>
+            <ul class="hero__list">
+              <li>Real screenshots from the WP build</li>
+              <li>Styled to match Universo da Doçura’s palette</li>
+              <li>Click any screen to open full-size</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="gallery">
+        <div class="wrap">
+          <div class="section__head">
+            <h2>Screens</h2>
+            <p class="section__sub">
+              A curated slice of the UI: Home, Pastry Case, Locales, Dessert
+              Library, Artisans, and detail pages.
+            </p>
+          </div>
+
+          <div id="grid" class="grid" aria-live="polite"></div>
+        </div>
+      </section>
+
+      <section class="section section--soft" id="about">
+        <div class="wrap about">
+          <div>
+            <h2>Why screenshots?</h2>
+            <p>
+              Universo da Doçura is a custom WordPress build still in active
+              development. Hosting a screenshot gallery lets me share the design
+              system, layout decisions, and content structure without exposing
+              an unfinished backend or paying for hosting before it’s ready.
+            </p>
+            <p>It’s basically a “museum exhibit” of the site.</p>
+          </div>
+
+          <div class="about__callout">
+            <p class="about__label">Palette</p>
+            <p class="about__swatches">
+              <span class="swatch swatch--cream" title="Cream"></span>
+              <span class="swatch swatch--hazelnut" title="Hazelnut"></span>
+              <span class="swatch swatch--pistachio" title="Pistachio"></span>
+              <span class="swatch swatch--terracotta" title="Terracotta"></span>
+              <span class="swatch swatch--orange" title="Orange Peel"></span>
+            </p>
+            <p class="about__hint">
+              Cream paper + hazelnut ink + pistachio buttons + terracotta
+              accents.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox" aria-hidden="true">
+      <div class="lightbox__backdrop" data-close="true"></div>
+
+      <div
+        class="lightbox__panel"
+        role="dialog"
+        aria-modal="true"
+        aria-label="Screenshot preview"
+      >
+        <button
+          class="lightbox__close"
+          type="button"
+          aria-label="Close"
+          data-close="true"
+        >
+          ✕
+        </button>
+
+        <div class="lightbox__head">
+          <div>
+            <p class="lightbox__kicker" id="lbKicker">Universo da Doçura</p>
+            <h3 class="lightbox__title" id="lbTitle">Title</h3>
+          </div>
+
+          <a
+            class="btn btn--ghost"
+            id="lbOpen"
+            href="#"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Open image
+          </a>
+        </div>
+
+        <img id="lbImg" src="" alt="" />
+        <p class="lightbox__desc" id="lbDesc"></p>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <div class="wrap footer__inner">
+        <p>
+          © <span id="year"></span> Morgan Jones — Universo da Doçura (Gallery
+          Preview)
+        </p>
+        <p class="footer__muted">Built as a static GitHub Pages showcase.</p>
+      </div>
+    </footer>
+
+    <script src="js/index.js"></script>
+  </body>
+</html>
